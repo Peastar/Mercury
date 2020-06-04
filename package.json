@@ -1,0 +1,52 @@
+{
+  "name": "mercury",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://source.developers.google.com/p/halogen-data-275103/r/mercury",
+  "author": "PeaceStar",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**"
+    ]
+  },
+  "scripts": {
+    "server": "yarn workspace server start",
+    "dev": "yarn workspace client dev",
+    "build": "yarn workspace client build",
+    "ios": "yarn workspace mobile ios",
+    "android": "yarn workspace mobile android",
+    "native": "yarn workspace mobile start"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-transform-react-constant-elements": "^7.10.1",
+    "@babel/plugin-transform-react-inline-elements": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/register": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
+    "@babel/runtime-corejs3": "^7.10.2",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.0.1",
+    "concurrently": "^5.2.0",
+    "eslint": "^7.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.20.0",
+    "jest": "^26.0.1",
+    "stylelint": "^13.5.0"
+  }
+}

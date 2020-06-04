@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "root": true,
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersions": 6,
+    "sourcetype": "module",
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "import",
+    "node"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "@react-native-community"
+  ],
+  "rules": {
+    "quotes": ["error", "single"],
+    "react/jsx-indent": 0,
+    "react/display-name": 0,
+    "no-console": 0,
+    "no-unused-vars": 0,
+    "no-useless-catch": "off"
+  }
+}
