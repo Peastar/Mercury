@@ -15,14 +15,15 @@ import well from './routes/well-known';
 
 const handleRender = (req, res) => {
     console.log(req.headers);
-    // console.log(res);
     const html = ReactDOMServer.renderToString();
 
     fs.readFile(
         path.join(__dirname, '../client/destination/index.html'),
         'utf8',
         (err, data) => {
-            if (err) throw err;
+            if (err) {
+                throw err;
+            }
 
             const document = data.replace(
                 /<div id="root"><\/div>/,

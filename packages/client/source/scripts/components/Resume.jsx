@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import {withRouter} from 'react-router-dom';
 
 import style from '../../styles/scss/main.scss';
-import en from '../../pdf/resume_e_May20.pdf';
-import ja from '../../pdf/resume_j_May20.pdf';
+import en from '../../pdf/resume_e_Jun20.pdf';
+import ja from '../../pdf/resume_j_Jun20.pdf';
 
 const Resume = () => {
     const [active, setActive] = useState(0);
     const handleClick = (e) => {
-        const index = parseInt(e.target.id, 0);
+        const index = parseInt(e.target.id, 2);
         if (index !== active) {
             setActive(index);
         }

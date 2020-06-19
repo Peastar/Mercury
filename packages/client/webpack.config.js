@@ -86,6 +86,15 @@ module.exports = () => {
                     ],
                 },
                 {
+                    test: /\.tsx?$/,
+                    exclude: /node_modules/,
+                    use: [
+                        {
+                            loader: 'ts-loader',
+                        },
+                    ],
+                },
+                {
                     enforce: 'pre',
                     test: /\.js$/,
                     exclude: /node_modules/,
@@ -168,7 +177,16 @@ module.exports = () => {
         watch: true,
 
         resolve: {
-            extensions: ['.js', '.json', '.jsx', '.scss', '.css', '.pcss'],
+            extensions: [
+                '.js',
+                '.json',
+                '.jsx',
+                '.scss',
+                '.css',
+                '.pcss',
+                '.ts',
+                '.tsx',
+            ],
             modules: ['node_modules'],
         },
         plugins: [

@@ -1,5 +1,5 @@
 {
-  "name": "evolution",
+  "name": "Mercury",
   "schemaPath": "schema.graphql",
   "extensions": {
     "endpoints": {

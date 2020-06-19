@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-//import fetch from 'cross-fetch'
-//import * as actions from '../constants/action_types'
+import fetch from 'cross-fetch';
+import * as actions from '../constants/action_types';
+import style from '../../styles/scss/main.scss';
 
 const SignUp = (props) => {
     const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const SignUp = (props) => {
         setter(e.target.value);
     };
 
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
@@ -49,25 +50,23 @@ const SignUp = (props) => {
 
         console.log(requestOptions);
 
-        /*fetch('http://localhost:3000/graphql', requestOptions)
-            .then(res => {
+        fetch('http://localhost/graphql', requestOptions)
+            .then((res) => {
                 console.log(res);
                 if (res.status >= 400) {
                     throw new Error('Bad response from server');
                 }
                 return res.json();
             })
-            .then(user => {
+            .then((user) => {
                 console.log(user);
             })
-            .catch(err => {
+            .catch((err) => {
                 console.error(err);
-            });*/
+            });
 
         // try {
-        //
-        //
-        //     const data = await fetch('http://localhost:3000/graphql', requestBody);
+        //     const data = await fetch('http://localhost/graphql', inputData);
         //
         //     console.log(data);
         //
@@ -77,20 +76,19 @@ const SignUp = (props) => {
         //     } else {
         //         setError(null);
         //         setLoading(false);
-        //         const { _id, token } = await data.data.createUser;
+        //         const {_id, token} = await data.data.createUser;
         //
         //         dispatch({
         //             type: actions.SET_AUTH_USER,
         //             authUser: {
         //                 _id,
-        //                 email
-        //             }
+        //                 email,
+        //             },
         //         });
         //         localStorage.setItem('token', token);
         //         //props.history.push('/');
         //     }
-        // }
-        // catch (e) {
+        // } catch (e) {
         //     setError(e);
         //     setLoading(false);
         // }

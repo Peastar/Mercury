@@ -16,21 +16,20 @@ const resolver = new Resolver();
 
 const options = {
     family: 4,
-    hints: dns.ADDRCONFIG | dns.V4MAPPED,
+    hints: dns.ADDRCONFIG || dns.V4MAPPED,
 };
 
 dns.lookup('www.peastar.net', options, (err, address, family) => {
+    console.log(err);
     console.log('address:', address);
     console.log(family);
-    dns.reverse(address, (err, hostnames) => {
-        console.log('27: ', hostnames);
-        if (err) {
-            console.log(err.stack);
+    dns.reverse(address, (error, hostname) => {
+        console.log('27: ', hostname);
+        if (error) {
+            console.log(error.stack);
         }
 
-        console.log(
-            'reverse for ' + address + ': ' + JSON.stringify(hostnames),
-        );
+        console.log('reverse for ' + address + ': ' + JSON.stringify(hostname));
     });
 });
 
@@ -97,7 +96,7 @@ const httpsServer = https.createServer(credentials, app);
  * Listen on provided port, on all network interfaces.
  */
 console.log(port);
-server.listen(port);
+server.listen(port, () => console.log(`Server is listening on port: ${port}`));
 server.on('error', onError);
 server.on('listening', onListening);
 httpsServer.listen(8443, () => {
@@ -111,16 +110,16 @@ httpsServer.on('listening', onListening);
  */
 
 function normalizePort(val) {
-    const port = parseInt(val, 10);
+    const portNum = parseInt(val, 10);
 
-    if (isNaN(port)) {
+    if (isNaN(portNum)) {
         // named pipe
         return val;
     }
 
-    if (port >= 0) {
+    if (portNum >= 0) {
         // port number
-        return port;
+        return portNum;
     }
 
     return false;

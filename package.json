@@ -21,7 +21,8 @@
     "build": "yarn workspace client build",
     "ios": "yarn workspace mobile ios",
     "android": "yarn workspace mobile android",
-    "native": "yarn workspace mobile start"
+    "client:test": "yarn workspace client test",
+    "mobile:test": "yarn workspace mobile test"
   },
   "dependencies": {
     "dotenv": "^8.2.0"
@@ -39,14 +40,19 @@
     "@babel/register": "^7.10.1",
     "@babel/runtime": "^7.10.2",
     "@babel/runtime-corejs3": "^7.10.2",
+    "@types/react": "^16.9.38",
+    "@types/react-dom": "^16.9.8",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
     "concurrently": "^5.2.0",
-    "eslint": "^7.1.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "jest": "^26.0.1",
-    "stylelint": "^13.5.0"
+    "stylelint": "^13.6.1",
+    "typescript": "^3.9.5"
   }
 }
