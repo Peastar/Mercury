@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import User from '../../../models/user';
 
 export async function createUser(args) {
+    console.log(args);
     try {
         const {email, password, confirm} = args.userInput; //retrieve values from arguments
 

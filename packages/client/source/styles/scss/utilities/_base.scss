@@ -80,6 +80,13 @@ a {
   }
 }
 
+.centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .h100 {
   height: 100%;
 }

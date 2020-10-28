@@ -8,7 +8,8 @@ const webpack = require('webpack'),
     HtmlWebpackHardDiskPlugin = require('html-webpack-harddisk-plugin'),
     {CleanWebpackPlugin} = require('clean-webpack-plugin'),
     FileManagerPlugin = require('filemanager-webpack-plugin'),
-    {GenerateSW} = require('workbox-webpack-plugin');
+    {GenerateSW} = require('workbox-webpack-plugin'),
+    TerserPlugin = require('terser-webpack-plugin');
 
 const generateHtml = (dir) => {
     return glob.sync(dir + '/**/*.html').map((file) => {
@@ -34,36 +35,41 @@ module.exports = () => {
     const isEnvDevelopment = process.env.NODE_ENV === 'development';
     const isEnvProduction = process.env.NODE_ENV === 'production';
     const env = isEnvDevelopment ? 'development' : 'production';
+    const source = path.join(__dirname, './source');
 
     return {
         mode: env,
         bail: isEnvProduction,
         devtool: isEnvProduction
-            ? 'source-map'
-            : isEnvDevelopment && 'cheap-module-source-map',
+            ? false
+            : isEnvDevelopment && 'inline-source-map',
 
-        context: path.join(__dirname, './source'),
+        context: source,
 
         entry: {
-            main: './scripts/index',
+            main: [source + '/scripts/index'],
         },
 
         output: {
             path: path.join(__dirname, './destination'),
             publicPath: '',
             filename: 'scripts/[name].js',
-            hotUpdateChunkFilename: 'hot/hot-update.js',
+            // hotUpdateChunkFilename: 'hot/hot-update.js',
             hotUpdateMainFilename: 'hot/[hash].hot-update.json',
         },
 
         optimization: {
-            splitChunks: {
-                chunks: 'all',
+            minimize: true,
+            minimizer: [new TerserPlugin()],
+            runtimeChunk: {
+                name: 'runtime',
             },
         },
 
         performance: {
-            maxEntrypointSize: 400000,
+            hints: false,
+            maxEntrypointSize: 512000,
+            maxAssetSize: 512000,
         },
 
         module: {
@@ -168,10 +174,13 @@ module.exports = () => {
             ],
         },
         devServer: {
+            contentBase: path.join(__dirname, './destination'),
             hot: true,
             port: 8808,
-            contentBase: path.join(__dirname, './destination'),
+            open: true,
+            compress: true,
             watchContentBase: true,
+            historyApiFallback: true,
         },
 
         watch: true,
@@ -211,7 +220,7 @@ module.exports = () => {
                 skipWaiting: true,
                 maximumFileSizeToCacheInBytes: 5000000,
             }),
-            new webpack.HotModuleReplacementPlugin(),
+            isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
         ]
             .concat(htmlPlugins, writeHtml)
             .filter(Boolean),

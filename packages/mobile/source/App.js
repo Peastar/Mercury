@@ -7,16 +7,11 @@
  */
 
 import React from 'react';
-import {
-    SafeAreaView,
-    StyleSheet,
-    ScrollView,
-    View,
-    Text,
-    StatusBar,
-} from 'react-native';
+import {NativeModules} from 'react-native';
 
 import Home from './Home';
+
+console.log(NativeModules);
 
 const App: () => React$Node = () => {
     return (

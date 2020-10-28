@@ -1,135 +1,146 @@
+.full-image {
+  background: url("../../images/peastar2019.jpg") center/cover no-repeat;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+  transform: translate(-50%, -50%); }
+
+input {
+  appearance: none;
+  color: white;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  box-sizing: border-box; }
+  input[type='text'], input[type='email'], input[type='password'] {
+    width: 250px;
+    height: 30px;
+    background-color: #424242;
+    padding: 0 10px;
+    margin: 5px;
+    display: block; }
+    input[type='text']:focus, input[type='email']:focus, input[type='password']:focus {
+      border: 2px solid #9c9c9c; }
+  input::placeholder {
+    color: #e0e0e0; }
+
+button {
+  background-color: #6a6a6a;
+  width: 120px;
+  height: 28px;
+  color: #e0e0e0;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px; }
+
 .home-link {
-    background: url('../../images/logo.png') center/contain no-repeat;
-    width: 22px;
-    height: 40px;
-    text-indent: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
+  background: url("../../images/logo.png") center/contain no-repeat;
+  width: 22px;
+  height: 40px;
+  margin: 0 10px;
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.global-link {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px; }
 
 video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
 
-nav {
-    position: relative;
-    height: 40px;
-}
-nav .left-nav {
-    display: inline-block;
-    margin: 0 20px;
-}
-nav .right-nav {
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-}
-nav .right-nav a {
-    display: inline-block;
-    height: 40px;
-    line-height: 40px;
-    margin-left: 20px;
-}
+.frame {
+  border: 1px solid #555555;
+  padding: 20px;
+  margin: 20px;
+  min-width: 500px;
+  text-align: center; }
+  .frame form {
+    display: inline-table; }
 
 header {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-}
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed; }
+
+.tabs {
+  position: relative;
+  text-align: center; }
+
+.tab {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  font-size: 22px;
+  width: 300px;
+  cursor: pointer; }
+  .tab [type='radio'] {
+    display: none; }
+  .tab.active {
+    background-color: #535659;
+    cursor: default; }
+  .tab label {
+    cursor: pointer; }
+
+.content {
+  height: 100%; }
 
 main {
-    padding: 50px 10px;
-}
+  height: 100%; }
+  main section:first-child {
+    height: 100%; }
 
 @font-face {
-    font-family: 'Myriad Pro';
-    src: url('../../fonts/eot/MyriadPro-Regular.eot');
-    src: url('../../fonts/eot/MyriadPro-Regular.eot?#iefix')
-            format('embedded-opentype'),
-        url('../../fonts/woff2/MyriadPro-Regular.woff2') format('woff2'),
-        url('../../fonts/woff/MyriadPro-Regular.woff') format('woff'),
-        url('../../fonts/ttf/MyriadPro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+  font-family: "Myriad Pro";
+  src: url("../../fonts/eot/MyriadPro-Regular.eot"), url("../../fonts/eot/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/woff2/MyriadPro-Regular.woff2") format("woff2"), url("../../fonts/woff/MyriadPro-Regular.woff") format("woff"), url("../../fonts/ttf/MyriadPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
-    font-family: 'Myriad Set Pro';
-    src: url('../../fonts/eot/MyriadSetPro-Medium.eot');
-    src: url('../../fonts/eot/MyriadSetPro-Medium.eot?#iefix')
-            format('embedded-opentype'),
-        url('../../fonts/woff2/MyriadSetPro-Medium.woff2') format('woff2'),
-        url('../../fonts/woff/MyriadSetPro-Medium.woff') format('woff'),
-        url('../../fonts/ttf/MyriadSetPro-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
+  font-family: "Myriad Set Pro";
+  src: url("../../fonts/eot/MyriadSetPro-Medium.eot"), url("../../fonts/eot/MyriadSetPro-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/woff2/MyriadSetPro-Medium.woff2") format("woff2"), url("../../fonts/woff/MyriadSetPro-Medium.woff") format("woff"), url("../../fonts/ttf/MyriadSetPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
 @font-face {
-    font-family: 'Myriad Set Pro';
-    src: url('../../fonts/eot/MyriadSetPro-Ultralight.eot');
-    src: url('../../fonts/eot/MyriadSetPro-Ultralight.eot?#iefix')
-            format('embedded-opentype'),
-        url('../../fonts/woff2/MyriadSetPro-Ultralight.woff2') format('woff2'),
-        url('../../fonts/woff/MyriadSetPro-Ultralight.woff') format('woff'),
-        url('../../fonts/ttf/MyriadSetPro-Ultralight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
+  font-family: "Myriad Set Pro";
+  src: url("../../fonts/eot/MyriadSetPro-Ultralight.eot"), url("../../fonts/eot/MyriadSetPro-Ultralight.eot?#iefix") format("embedded-opentype"), url("../../fonts/woff2/MyriadSetPro-Ultralight.woff2") format("woff2"), url("../../fonts/woff/MyriadSetPro-Ultralight.woff") format("woff"), url("../../fonts/ttf/MyriadSetPro-Ultralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
 @font-face {
-    font-family: 'Myriad Set Pro';
-    src: url('../../fonts/eot/MyriadSetPro-Thin.eot');
-    src: url('../../fonts/eot/MyriadSetPro-Thin.eot?#iefix')
-            format('embedded-opentype'),
-        url('../../fonts/woff2/MyriadSetPro-Thin.woff2') format('woff2'),
-        url('../../fonts/woff/MyriadSetPro-Thin.woff') format('woff'),
-        url('../../fonts/ttf/MyriadSetPro-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
+  font-family: "Myriad Set Pro";
+  src: url("../../fonts/eot/MyriadSetPro-Thin.eot"), url("../../fonts/eot/MyriadSetPro-Thin.eot?#iefix") format("embedded-opentype"), url("../../fonts/woff2/MyriadSetPro-Thin.woff2") format("woff2"), url("../../fonts/woff/MyriadSetPro-Thin.woff") format("woff"), url("../../fonts/ttf/MyriadSetPro-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; }
 @font-face {
-    font-family: 'Myriad Set Pro';
-    src: url('../../fonts/eot/MyriadSetPro-Text.eot');
-    src: url('../../fonts/eot/MyriadSetPro-Text.eot?#iefix')
-            format('embedded-opentype'),
-        url('../../fonts/woff2/MyriadSetPro-Text.woff2') format('woff2'),
-        url('../../fonts/woff/MyriadSetPro-Text.woff') format('woff'),
-        url('../../fonts/ttf/MyriadSetPro-Text.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+  font-family: "Myriad Set Pro";
+  src: url("../../fonts/eot/MyriadSetPro-Text.eot"), url("../../fonts/eot/MyriadSetPro-Text.eot?#iefix") format("embedded-opentype"), url("../../fonts/woff2/MyriadSetPro-Text.woff2") format("woff2"), url("../../fonts/woff/MyriadSetPro-Text.woff") format("woff"), url("../../fonts/ttf/MyriadSetPro-Text.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
-    font-family: 'Myriad Set Pro';
-    src: url('../../fonts/eot/MyriadSetPro-Semibold.eot');
-    src: url('../../fonts/eot/MyriadSetPro-Semibold.eot?#iefix')
-            format('embedded-opentype'),
-        url('../../fonts/woff2/MyriadSetPro-Semibold.woff2') format('woff2'),
-        url('../../fonts/woff/MyriadSetPro-Semibold.woff') format('woff'),
-        url('../../fonts/ttf/MyriadSetPro-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
+  font-family: "Myriad Set Pro";
+  src: url("../../fonts/eot/MyriadSetPro-Semibold.eot"), url("../../fonts/eot/MyriadSetPro-Semibold.eot?#iefix") format("embedded-opentype"), url("../../fonts/woff2/MyriadSetPro-Semibold.woff2") format("woff2"), url("../../fonts/woff/MyriadSetPro-Semibold.woff") format("woff"), url("../../fonts/ttf/MyriadSetPro-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal; }
 @font-face {
-    font-family: 'Myriad Set Pro';
-    src: url('../../fonts/eot/MyriadSetPro-Bold.eot');
-    src: url('../../fonts/eot/MyriadSetPro-Bold.eot?#iefix')
-            format('embedded-opentype'),
-        url('../../fonts/woff2/MyriadSetPro-Bold.woff2') format('woff2'),
-        url('../../fonts/woff/MyriadSetPro-Bold.woff') format('woff'),
-        url('../../fonts/ttf/MyriadSetPro-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
+  font-family: "Myriad Set Pro";
+  src: url("../../fonts/eot/MyriadSetPro-Bold.eot"), url("../../fonts/eot/MyriadSetPro-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/woff2/MyriadSetPro-Bold.woff2") format("woff2"), url("../../fonts/woff/MyriadSetPro-Bold.woff") format("woff"), url("../../fonts/ttf/MyriadSetPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
 html {
-    font-size: 100%;
-}
+  font-size: 100%;
+  height: 100%; }
 
 body,
 ul,
@@ -154,44 +165,45 @@ legend,
 pre,
 abbr,
 button {
-    margin: 0;
-    padding: 0;
-}
+  margin: 0;
+  padding: 0; }
 
 body {
-    color: white;
-    font-style: normal;
-    font-weight: normal;
-    background-color: black;
-    font-family: 'Myriad Set Pro', 'Myriad Pro', 'Lucida Grande',
-        'Helvetica Neue', 'Helvetica', 'Arial', 'Verdana', sans-serif;
-}
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  background-color: black;
+  font-family: "Myriad Set Pro", "Myriad Pro", "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+  height: 100%; }
 
 ol,
 ul {
-    list-style: none;
-}
+  list-style: none; }
 
 a {
-    color: white;
-    text-decoration: none;
-}
-a:hover {
-    color: #c8c8c8;
-}
+  color: white;
+  text-decoration: none; }
+  a:hover {
+    color: #c8c8c8; }
 
 .table {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-}
-.table ul {
-    display: table-row;
-}
-.table ul li {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+  .table ul {
+    display: table-row; }
+    .table ul li {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center; }
+
+.centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.h100 {
+  height: 100%; }
 
 /*# sourceMappingURL=main.css.map */
