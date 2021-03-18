@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {withRouter} from 'react-router-dom';
 
 import style from '../../styles/scss/main.scss';
-import en from '../../pdf/resume_e_Sep20.pdf';
-import ja from '../../pdf/resume_j_Sep20.pdf';
+import en from '../../pdf/resume_e_Jan21.pdf';
+import ja from '../../pdf/resume_j_Jan21.pdf';
 
 const Resume = () => {
     const [active, setActive] = useState(0);

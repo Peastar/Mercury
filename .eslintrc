@@ -49,8 +49,8 @@
       },
       "extends": [
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "prettier/@typescript-eslint"
+        "plugin:@typescript-eslint/eslint-recommended"
+//        "prettier/@typescript-eslint"
       ],
       "rules": {
         "prefer-const": "off",

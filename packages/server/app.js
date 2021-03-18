@@ -8,7 +8,10 @@ import ReactDOMServer from 'react-dom/server';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-
+// import webpack from 'webpack';
+// import webpackDevServer from 'webpack-dev-server';
+//
+// import config from '../client/webpack.config.js';
 import index from './routes/index';
 import graphql from './routes/graphql';
 import well from './routes/well-known';
@@ -35,7 +38,20 @@ const handleRender = (req, res) => {
     );
 };
 
+// const options = {
+//     contentBase: path.join(__dirname, '../client/destination'),
+//     hot: true,
+//     open: true,
+//     compress: true,
+//     watchContentBase: true,
+//     historyApiFallback: true,
+// };
+
 const app = express();
+// console.log(config);
+// webpackDevServer.addDevServerEntrypoints(config, options);
+// const compiler = webpack(config);
+// console.log(compiler);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -46,6 +62,7 @@ app.use('/', index);
 app.use('/graphql', graphql);
 app.use('/.well-known/acme-challenge/', well);
 app.use(express.static(path.join(__dirname, '../client/destination')));
+// app.use(new webpackDevServer(compiler, options));
 
 mongoose
     .connect('mongodb://localhost:27017/mercury', {

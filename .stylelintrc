@@ -28,7 +28,6 @@
     "declaration-block-semicolon-space-before": "never",
     "declaration-block-single-line-max-declarations": 1,
     "declaration-block-trailing-semicolon": "always",
-
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "font-family-name-quotes": "always-unless-keyword",
@@ -61,7 +60,7 @@
     "selector-list-comma-space-before": "never",
     "selector-pseudo-element-colon-notation": "double",
     "string-no-newline": true,
-    "string-quotes": "double",
+    "string-quotes": "single",
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never"

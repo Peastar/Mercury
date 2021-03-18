@@ -56,8 +56,8 @@
             1 <=
             length($args) and
             type-of(nth($args, $i + 1)) ==
-            number
-        {
+
+          number {
             #{$o}: nth($args, $i + 1);
         }
     }

@@ -1,8 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     console.log(req);
+    console.log(req.body);
     res.json({message: 'Hello First API Call!'});
 });
 

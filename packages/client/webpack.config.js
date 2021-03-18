@@ -32,11 +32,13 @@ const htmlPlugins = generateHtml('./source/html');
 const writeHtml = [new HtmlWebpackHardDiskPlugin()];
 
 module.exports = () => {
+    console.log(process.env.NODE_ENV);
     const isEnvDevelopment = process.env.NODE_ENV === 'development';
     const isEnvProduction = process.env.NODE_ENV === 'production';
     const env = isEnvDevelopment ? 'development' : 'production';
     const source = path.join(__dirname, './source');
 
+    console.log(env);
     return {
         mode: env,
         bail: isEnvProduction,
@@ -47,7 +49,7 @@ module.exports = () => {
         context: source,
 
         entry: {
-            main: [source + '/scripts/index'],
+            main: ['webpack/hot/dev-server', source + '/scripts/index'],
         },
 
         output: {
@@ -177,13 +179,13 @@ module.exports = () => {
             contentBase: path.join(__dirname, './destination'),
             hot: true,
             port: 8808,
-            open: true,
+            // open: true,
             compress: true,
             watchContentBase: true,
             historyApiFallback: true,
         },
 
-        watch: true,
+        // watch: true,
 
         resolve: {
             extensions: [
@@ -210,17 +212,19 @@ module.exports = () => {
                 chunkFilename: 'styles/[id].css',
             }),
             new FileManagerPlugin({
-                onEnd: {
-                    delete: [path.join(__dirname, './destination', 'hot')],
+                events: {
+                    onEnd: {
+                        delete: [path.join(__dirname, './destination', 'hot')],
+                    },
                 },
             }),
             new GenerateSW({
                 swDest: 'scripts/sw.js',
                 clientsClaim: true,
                 skipWaiting: true,
-                maximumFileSizeToCacheInBytes: 5000000,
+                maximumFileSizeToCacheInBytes: 7000000,
             }),
-            isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
+            new webpack.HotModuleReplacementPlugin(),
         ]
             .concat(htmlPlugins, writeHtml)
             .filter(Boolean),

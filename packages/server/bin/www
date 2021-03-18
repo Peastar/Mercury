@@ -12,6 +12,7 @@ const fs = require('fs');
 // const path = require('path');
 const dns = require('dns');
 const {Resolver} = require('dns');
+
 const resolver = new Resolver();
 require('dotenv').config({path: '../../.env'});
 
@@ -81,7 +82,7 @@ const credentials = {
 /**
  * Get port from environment and store in Express.
  */
-console.log(process.env.PORT);
+console.log('85', process.env.PORT);
 
 const port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
