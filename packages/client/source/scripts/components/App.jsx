@@ -1,5 +1,5 @@
 import React from 'react';
-import {hot, setConfig} from 'react-hot-loader';
+
 import {
     // useHistory,
     BrowserRouter as Router,
@@ -60,6 +60,4 @@ App.propTypes = {
     children: PropTypes.object,
 };
 
-setConfig({logLevel: 'debug'});
-
-export default hot(module)(App);
+export default App;

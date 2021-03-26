@@ -49,7 +49,10 @@ module.exports = () => {
         context: source,
 
         entry: {
-            main: ['webpack/hot/dev-server', source + '/scripts/index'],
+            main: [
+                source + '/scripts/index',
+                'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true',
+            ],
         },
 
         output: {
@@ -199,6 +202,9 @@ module.exports = () => {
                 '.tsx',
             ],
             modules: ['node_modules'],
+        },
+        watchOptions: {
+            ignored: '/node_modules/',
         },
         plugins: [
             new webpack.DefinePlugin({

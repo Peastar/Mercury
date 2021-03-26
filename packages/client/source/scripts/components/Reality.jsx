@@ -5,6 +5,7 @@ const Reality = () => {
     return (
         <div>
             <h1>Reality</h1>
+            <div>test</div>
         </div>
     );
 };
